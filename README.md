@@ -79,4 +79,26 @@ Create Custom Info Actuator and custom info endpoint and custom actuator url pat
                 }
             }
 </pre>
-
+<h3>Custom Health Check</h3>
+<p>http://localhost:8080/myactuator/health</p>
+<pre>
+        @Component
+        public class DbHealthCheckIndicator implements HealthIndicator {
+        
+            @Override
+            public Health health() {
+                //Check Db Connection
+                boolean dbConnectionFailed=isDbConnectionFailed();
+        
+                if(dbConnectionFailed){
+                    return Health.down().withDetail("DBConnection","FAILED").build();
+                }
+                return Health.up().withDetail("DBConnection","SUCCESS").build();
+            }
+        
+            private boolean isDbConnectionFailed(){
+                //code to check the db connection.
+                return true;
+            }
+        }
+</pre>
