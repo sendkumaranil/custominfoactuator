@@ -102,3 +102,27 @@ Create Custom Info Actuator and custom info endpoint and custom actuator url pat
             }
         }
 </pre>
+<pre>
+        {
+            "status": "DOWN",
+            "components": {
+            "dbHealthCheckIndicator": {
+                "status": "DOWN",
+                "details": {
+                    "DBConnection": "FAILED"
+                }
+            },
+            "diskSpace": {
+            "status": "UP",
+                "details": {
+                "total": 121123069952,
+                "free": 59155836928,
+                "threshold": 10485760
+                }
+            },
+                "ping": {
+                "status": "UP"
+                }
+            }
+        }
+</pre>
