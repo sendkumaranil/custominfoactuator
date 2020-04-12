@@ -14,17 +14,17 @@ management.endpoints.web.base-path=/myactuator
 </ol>
 
 <b>1.Using Property File Configuration</b>
-       ``` info.app.environments=Dev
-           info.app.host=localhost
-           info.app.port=8080
+       <pre>info.app.environments=Dev
+       info.app.host=localhost
+       info.app.port=8080</pre>
 
 <b>2.Customize InfoContributor Interface</b>
-        ```   @Component
-              public class ProjectInfoService implements InfoContributor {
+       <pre> @Component
+        public class ProjectInfoService implements InfoContributor {
                   @Override
                   public void contribute(Info.Builder builder) {
                       ProjectDetails projectDetails=ProjectInfo.getProjectDetails();
                       builder.withDetail("projectDetails",projectDetails);
                   }
-              }
+        }</pre>
  
