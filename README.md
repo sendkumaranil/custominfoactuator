@@ -60,3 +60,23 @@ Create Custom Info Actuator and custom info endpoint and custom actuator url pat
               }
           }
 </pre>
+<h3>Custom endpoint with RestController</h3>
+<p>http://localhost:8080/myactuator/custom-mapping/all</p>
+<p>management.endpoints.web.exposure.include=dbInfo,info,custom-mapping</p>
+<pre>
+            @Component
+            @RestControllerEndpoint(id="custom-mapping")
+            public class CustomEndpointController {
+            
+                @GetMapping("/all")
+                public List<String> getMappings(){
+                    Map<String, String> mapping=MappingDetails.getMapping();
+                    List<String> mappings=null;
+            
+                    mappings=mapping.values().stream().collect(Collectors.toList());
+            
+                    return mappings;
+                }
+            }
+</pre>
+
