@@ -3,7 +3,9 @@ Create Custom Info Actuator and custom info endpoint and custom actuator url pat
 
 <h3>Custom Actuator URI </h3>
 
-http://localhost:8080/myactuator/
+<p>http://localhost:8080/myactuator/</p>
+
+<p>http://localhost:8080/myactuator/info</p>
 
 <p>management.endpoints.web.base-path=/myactuator</p>
 
